@@ -3,9 +3,8 @@
 ## Anyways, my name is Quincy Miller
 <p> And this is for CRP 458 </p>
 
-
-
-
+(The rest of this was default but I wasn't sure if I should delete it or not, so there it is...
+                                                                                
 
 
 ## Welcome to GitHub Pages
