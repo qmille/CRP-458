@@ -1,3 +1,13 @@
+# This is the github page for Exercise 1, though I chose the Modernist Theme 
+(Which hopefully didn't break the rules specified for this exercise)
+## Anyways, my name is Quincy Miller
+<p> And this is for CRP 458 </p>
+
+
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/qmille/CRP-458/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
