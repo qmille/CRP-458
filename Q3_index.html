@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="CRP 458 Assignment 3">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta name = "author" content="Quincy Miller">
+    <title>Assignment 3</title>
+    
+</head>
+    <style>
+        header {
+            padding:10px;
+            color: white;
+            background-color: black;
+            clear: both;
+            text-align: center;
+        }
+        
+        .nav a{
+            text-align: center;
+            padding: 100px;
+            overflow: hidden;
+            list-style-type: none;
+            text-decoration: none;
+            color: skyblue;
+        }
+        
+        .footer{
+            position:static;
+            left: 0;
+            bottom: 0;
+            width:auto;
+            background-color: none;
+            color: black;
+            text-align: center;
+        }
+    </style>
+    <header>
+    <h1> Click Below to See the Magic </h1>
+    </header>
+    <hr>
+    <script>
+    
+    function changeMap(x)
+        {
+            document.getElementById("myMap").src="images/" + x + ".png";
+        }
+    
+    </script>
+    
+    <div class="nav">
+     <a href="#" onclick="changeMap('basemapStreets')">Basemap</a>
+     <a href="#" onclick="changeMap('iowaBorder')">State Border</a>
+     <a href="#" onclick="changeMap('vineyards')">Vineyards</a>
+     <a href="#" onclick="changeMap('orchards')">Orchards</a>
+    </div>
+    <hr>
+    <br>
+    <body>
+        <img id="myMap" src="images/basemapStreets.png" alt="Streets Basemap" style="width:600px;height:400px;">
+    </body>
+    <br>
+    <br>
+    <div class="footer">
+    <p>Quincy Miller - Assignment 3</p>
+    </div>
+
+</html>
