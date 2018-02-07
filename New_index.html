@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="CRP 458 Assignment 4">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta name = "author" content="Quincy Miller">
+    <title>Assignment 4</title>
+    
+</head>
+    <style>
+        header {
+            padding:10px;
+            color: darkgrey;
+            background-color: aliceblue;
+            clear: both;
+            text-align: center;
+        }
+        .footer{
+            position:static;
+            left: 0;
+            bottom: 0;
+            width:auto;
+            background-color: none;
+            color: black;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+    <header>
+        <h1>Whether to Weather the Weather</h1>    
+    </header>
+    <hr>
+    <h4>There's 6 Temperature Ranges-Find em All!</h4>
+    <body>
+        <p>What's the Temperature (Fahrenheit)?</p>
+        
+        <input id="myInput" type="number">
+        
+        <button onclick="showTemp()">What Should I Wear?</button>
+        
+        <p id="show"></p>
+        <br>
+        
+        <button onclick="showFahr()">Show Countries that use Fahrenheit</button>
+        <p id="fahr"></p>
+        
+    <script>
+    function showTemp()
+        {
+            
+            var x = document.getElementById("myInput").value;
+            var text;
+            
+            if(x<=-50)
+                {
+            text = "You must be a penguin or from Hoth";
+                }
+            
+            else if(x>-50 && x<0)
+            {
+               text = "COLD! Parkas and snowshoes are advised";
+            }
+            
+            else if(x>=0 && x<=32)
+            {
+                text = "A bit cold, better go with a decent coat and pants";
+            }
+            
+            else if(x>32 && x<=60)
+            {
+                text = "You should be fine with a T-Shirt and jeans";
+            }
+            
+            else if(x>60 && x<=100)
+            {
+                text = "Shorts and water, and maybe sunscreen";
+            }
+            
+            else if(x>100)
+            {
+                text = "You must be on the sun or in Arizona idk how to help you";
+            }
+            document.getElementById("show").innerHTML = text;
+            
+        }
+        
+        function showFahr()
+        {
+            var countries, text2, cLen, i;
+            
+            countries=["Bahamas", "Belize", "Cayman Islands", "Palau", "USA"]
+            cLen=countries.length;
+            text2="<ul>";
+            for(i=0;i<cLen;i++)
+                {
+                    text2+= "<li>" + countries[i] + "</li>"
+                }
+            text2+= "</ul>";
+            document.getElementById("fahr").innerHTML = text2;
+        }
+        
+                
+   </script> 
+    </body>
+    <br>
+    <hr>
+    <div class="footer">
+    <p>Quincy Miller - Assignment 4</p>
+    </div>
+</html>
