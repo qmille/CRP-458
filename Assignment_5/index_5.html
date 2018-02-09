@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="description" content="CRP 458 Assignment 5">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta name = "author" content="Quincy Miller">
+    <title>Assignment 5</title>
+</head>
+    <style>
+        header {
+            padding:10px;
+            color: darkgrey;
+            background-color: aliceblue;
+            clear: both;
+            text-align: center;
+        }
+        .footer{
+            position:static;
+            left: 0;
+            bottom: 0;
+            width:auto;
+            background-color: none;
+            color: black;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+    
+<header>
+    <h2>Where'd You Come From? Where'd You Go? Where'd You Come From...</h2>
+</header>
+<hr>
+<body>
+<p>Finish the Lyric!</p>
+    <input type="radio" name="answer" value="1" checked>Fried Potatoes<br>
+    <input type="radio" name="answer" value="2" checked>Trifl'n Hoes<br>
+    <input type="radio" name="answer" value="3" checked>Cotton Eye'd Joe<br>
+    <input type="radio" name="answer" value="3" checked>Barley Thigh'd Poe<br>
+    <input type="button" onclick="alert('The Correct Answer Is: Cotton Eyed Joe')" value="Am I Right?">
+    <br>
+    <p>Are You Ready For The Next Bit?</p>
+    
+    <input type="text" id="myText" value="">
+    <br>
+    <button onclick="youReady()">Submit</button>
+    <br>
+    <p id="show"></p>
+    <br>
+    <select id="newDrop">
+    <option value="Pick">Pick A Map</option>
+  <option value="Ames" href="Ames.html">Ames</option>
+  <option value="Leesburg">Leesburg</option>
+  <option value="Denver">Denver</option>
+  <option value="Bangkok">Bangkok</option>     
+</select>
+    <script>
+    function youReady()
+        {
+            var x = document.getElementById("myText").value;
+            var text;
+            
+            if(x=="Yes")
+                {
+                    text="Yay! Glad to hear it!";
+                }
+            else if (x=="No")
+                {
+                    text="Well TOO BAD";
+                }
+            else
+                {
+                    text="Please answer Yes or No"
+                }
+            
+            document.getElementById("show").innerHTML = text;
+        }
+        document.getElementById('newDrop').onchange = function() {
+    window.location.href = this.children[this.selectedIndex].getAttribute('href');
+}
+    </script>
+</body>
+    <br>
+    <hr>
+    <div class="footer">
+    <p>Quincy Miller - Assignment 5</p>
+    </div>
+    
+</html>
