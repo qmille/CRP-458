@@ -12,5 +12,7 @@
   <a href="https://qmille.github.io/CRP-458/New_index.html">Assignment 4</a>
   <br>
   <a href="https://qmille.github.io/CRP-458/Assignment_5/index_5.html">Assignment 5</a>
+  <br>
+  <a href="https://qmille.github.io/CRP-458/index_6.html">Assignment 6</a>
   </body>
 
