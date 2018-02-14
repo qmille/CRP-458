@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="CRP 458 Assignment 6">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <meta name = "author" content="Quincy Miller">
+    <title>Assignment 6</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+    </head>
+    
+    <header>
+<h2>Ya'll Ready to CHA CHA SLIIDDDEEEE???</h2>
+    
+    <script>
+    $(document).ready(function(){
+        $(".yus").click(function(){
+          $("p1").delay(1500).fadeOut(); //Makes the aww dissappear
+          $("p2").delay(2500).fadeOut(); //Makes the yeahh dissappear after the aww
+        });
+        
+        $(".b2").click(function(){
+            $("#funk").animate({right:"100px"}); //Moves the funky text to the right
+        });
+        
+        $(".b3").click(function(){
+            $("#funk").animate({left:"100px"}); //Moves the funky text left
+        });
+        
+        $(".b4").click(function(){
+            $("body").hide(); //Text goes away
+        });
+        
+                        
+            
+    });
+    </script>
+    
+</header>
+    
+    <style>
+        header
+            {
+            padding:10px;
+            color: white;
+            background-color: black;
+            clear: both;
+            text-align: center;
+        }
+        
+        .nav
+        {
+            position:absolute;
+            
+        }
+        #funk
+        {
+            position:absolute;
+        }
+        
+    </style>
+    
+    <body>
+        <br>
+    <button class = "yus">YES</button>
+        <br>
+    <p1>Awwwwwwwwwwww </p1>
+        <br>
+    <p2>yeaaahhhhhhhhhhhhhhhhhhhh</p2>
+        <br>
+        <hr>
+        <br>
+     <button class = "b2">TO THE RIGHT</button> <button class= "b3">TAKE IT BACK NOW YALL</button>
+        <br>
+   <p id="funk">FUNKY DANCE BEAT</p>
+    <br>
+        <br>
+        <br>
+        <button class = "b4">Cha Cha Real Smooth</button>
+    </body>
+    
+</html>
