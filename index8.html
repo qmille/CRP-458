@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="CRP 458 Assignment 8-Quincy Miller">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Assignment 8-QM</title>
+	
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" /> <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+</head>
+    
+<style>
+#map {
+     width: 500px;
+     height: 400px;
+     background-color: red;
+}
+</style>
+    
+<body>
+    <h2>A Brief Moving History</h2>
+    <hr>
+
+    <div id='map'></div>
+    <br>
+  Pan to <a href="javascript:seoul()"> Seoul-Where My Parents Used to Live</a>
+  <br>
+Pan to <a href="javascript:manila()"> Manila-Where My Parents Currently Live</a>
+    <br>
+Pan to <a href="javascript:bangkok()"> Bangkok-Where My Parents are Moving To Next</a>
+    <br>
+    <hr>
+    <br>
+    Go to circle number 1!<a href="javascript:op()"> We left when I was three</a>
+    <br>
+    Or cirlcle number 2 <a href="javascript:hr()"> Hometown-grew up here</a>
+    <br>
+    Or number 3 <a href="javascript:fred()"> We only lived here about six months</a>
+    <br>
+    Or number 4 I guess <a href="javascript:cairo()">This was a pretty exciting year (2011) </a>
+    <br>
+    We're almost done don't worry <a href="javascript:lees()">Went to high school here</a>
+    <br>
+    Pan back to <a href="javascript:ames()"> Ames, Iowa-Current Homebase for Me and My Parents</a>
+    <script>
+ 
+    var map = L.map('map').setView([42.0, -93.634], 12);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([42.013474, -93.677047]).addTo(map)
+   .bindPopup("My House")
+   .openPopup();
+        
+var marker2 = L.marker([37.550399, 127.010555], {
+    title: 'seoul'
+}).addTo(map)
+    .bindPopup("Seoul, South Korea");
+        
+var marker3 = L.marker([14.553055, 121.023082], {
+    title: 'manila'
+}).addTo(map)
+    .bindPopup("Manila, The Philippines");
+        
+var marker4 = L.marker([13.753396, 100.503327], {
+    title: 'bangkok'
+}).addTo(map)
+    .bindPopup("Bangkok, Thailand (and my birthplace)");
+
+var boundCoords1 = [[42.022741, -93.654268], [42.019171, -93.644409]];
+
+var rectangle1 = L.rectangle(boundCoords1, {
+    color: "green",
+    weight: 3,
+    opacity: .6
+}).addTo(map)
+   .bindPopup("Campustown");
+
+var boundCoords2 = [[42.022750, -93.623733], [42.019385, -93.620739]];
+
+var rectangle2 = L.rectangle(boundCoords2, {
+    color: "blue",
+    weight: 6,
+    opacity: .3
+}).addTo(map)
+   .bindPopup("Iowa DOT - My Office");
+
+var cm1 = new L.circle([39.556665, -104.943158], {
+    radius: 10000,
+    color: 'orange',
+    stroke: true,
+    fill: true
+}).addTo(map)
+    .bindPopup("Highlands Ranch, CO - 10 years");
+        
+var cm2 = new L.circle([38.973950, -94.676818], {
+    radius: 3000,
+    color: 'blue',
+    stroke: true,
+    fill: false
+}).addTo(map)
+    .bindPopup("Overland Park, KS - 3 years");
+        
+var cm3 = new L.circle([39.328002, -77.351858], {
+    radius: 600,
+    color: 'red',
+    stroke: true,
+    fill: false
+}).addTo(map)
+    .bindPopup("Frederick/Urbana, Maryland - 6 months");
+
+var cm4 = new L.circle([29.955976, 31.262277], {
+    radius: 1000,
+    color: 'yellow',
+    stroke: true,
+    fill: false
+}).addTo(map)
+    .bindPopup("Cairo/Maadi, Egypt - About One Year");
+        
+var cm5 = new L.circle([39.098803, -77.569141], {
+    radius: 4000,
+    color: 'green',
+    stroke: true,
+    fill: false
+}).addTo(map)
+    .bindPopup("Leesburg, VA - About four years");
+        
+function seoul() {
+  map.panTo(new L.LatLng(37.550399, 127.010555));
+}
+        
+function manila(){
+     map.panTo(new L.LatLng(14.553055, 121.023082));
+}
+function bangkok(){
+     map.panTo(new L.LatLng(13.753396, 100.503327));
+}
+
+function ames(){
+     map.panTo(new L.LatLng(42.0, -93.634));
+}
+              
+function hr() {
+  map.panTo(new L.LatLng(39.556665, -104.943158));
+}
+        
+function op() {
+  map.panTo(new L.LatLng(38.973950, -94.676818));
+}
+ 
+function fred() {
+  map.panTo(new L.LatLng(39.335571, -77.336924));
+}
+
+function cairo(){
+    map.panTo(new L.LatLng(29.955976, 31.262277));
+}
+        
+function lees(){
+    map.panTo(new L.LatLng(39.113989, -77.563819));
+}
+
+
+    </script>
+
+</body>
+</html>
