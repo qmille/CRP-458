@@ -1,4 +1,4 @@
-var myJSON={
+var oil=
 {
   "features": [
     {
@@ -83753,5 +83753,4 @@ var myJSON={
     }
   ],
   "type": "FeatureCollection"
-}
 }
