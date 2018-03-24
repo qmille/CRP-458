@@ -28,5 +28,7 @@
   <a href="https://qmille.github.io/CRP-458/index_12.html">Assignment 12</a>
   <br>
   <a href= "https://qmille.github.io/CRP-458/Assignment_13/ok_quake_assign13.geojson">Data for Assignment 13<a/>
+   <br>
+    <a href= "https://qmille.github.io/CRP-458/Assignment_13/new_13index.html"> Assignment 13</a>
   </body>
 
