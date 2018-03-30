@@ -34,5 +34,7 @@
     <a href= "https://qmille.github.io/CRP-458/index14.html"> Assignment 14</a>
     <br>
     <a href= "https://qmille.github.io/CRP-458/New_Airports.geojson"> Airport Location Data</a>
+    <br>
+    <a href= "https://qmille.github.io/CRP-458/Mini_Project/mini_proj_index_beta.html"> Mini Project</a>
   </body>
 
