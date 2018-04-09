@@ -315,7 +315,7 @@ var controlLayers = L.control.layers(baseLayers).addTo(map);
   iconUrl: '/Airports/Airport_pin.png'
 
 });
-$.getJSON("http://qmille.github.io/CRP-458/Mini_Project_NEW/Airports/New_Airports.geojson", function(geojson) {
+$.getJSON("https://qmille.github.io/CRP-458/New_Airports.geojson", function(geojson) {
   var geojsonLayer = L.geoJson(geojson, {
     pointToLayer: function(feature, latLng) {
       return new L.Marker(latLng, {
