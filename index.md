@@ -37,7 +37,7 @@
     <br>
     <a href= "https://qmille.github.io/CRP-458/Mini_Project_NEW/mini_proj_index_beta.html"> Mini Project</a> 
     <br>
-    <a href = "https://qmille.github.io/CRP-458/Mini_Project/mini_proj_index_beta.html"> Newer Project </a>
+    <a href = "https://qmille.github.io/CRP-458/Mini_Project_NEW/mini_proj_index_beta.html"> Newer Project </a>
     <br>
     <a href = "https://qmille.github.io/CRP-458/images/Airport_pin.png"> Images </a>
   </body>
