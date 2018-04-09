@@ -247,7 +247,7 @@ $(document).ready(function() {
   function getWeather(callback) {
     console.log(city);
     var url =
-      'https://api.openweathermap.org/data/2.5/weather?q=' + city +'&mode=json&units=imperial&appid=c4e073bb9cd6434b872ee452ef7a0449';
+      'http://api.openweathermap.org/data/2.5/weather?q=' + city +'&mode=json&units=imperial&appid=c4e073bb9cd6434b872ee452ef7a0449';
     $.ajax({
       dataType: "jsonp",
       url: url,
@@ -312,10 +312,10 @@ var controlLayers = L.control.layers(baseLayers).addTo(map);
     //Get Airports
     
     var myIcon = L.Icon.extend({
-  iconUrl: 'Airport_pin.png'
+  iconUrl: '/Airports/Airport_pin.png'
 
 });
-$.getJSON("https://qmille.github.io/CRP-458/New_Airports.geojson", function(geojson) {
+$.getJSON("http://qmille.github.io/CRP-458/Mini_Project_NEW/Airports/New_Airports.geojson", function(geojson) {
   var geojsonLayer = L.geoJson(geojson, {
     pointToLayer: function(feature, latLng) {
       return new L.Marker(latLng, {
