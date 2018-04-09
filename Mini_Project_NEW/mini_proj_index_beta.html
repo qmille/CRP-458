@@ -331,7 +331,7 @@ $.getJSON("https://qmille.github.io/CRP-458/New_Airports.geojson", function(geoj
         htmlText = "</strong>Code: <b>"  + feature.properties.code + "</b><br>Name: <b>"  + feature.properties.name + "</b><br>City: <b>"  + feature.properties.city + "</b>"
       layer.bindPopup(htmlText)
     }
-  })//.addTo(map);
+  });//.addTo(map);
   controlLayers.addOverlay(geojsonLayer, 'Airports');
 });
     L.control.scale().addTo(map);
