@@ -312,7 +312,7 @@ var controlLayers = L.control.layers(baseLayers).addTo(map);
     //Get Airports
     
     var myIcon = L.Icon.extend({
-  iconUrl: '/Airports/Airport_pin.png'
+  iconUrl: 'https://qmille.github.io/CRP-458/images/Airport_pin.png'
 
 });
 $.getJSON("https://qmille.github.io/CRP-458/New_Airports.geojson", function(geojson) {
@@ -320,7 +320,7 @@ $.getJSON("https://qmille.github.io/CRP-458/New_Airports.geojson", function(geoj
     pointToLayer: function(feature, latLng) {
       return new L.Marker(latLng, {
         icon: new myIcon({
-          iconUrl: '/Airports/Airport_pin.png',
+          iconUrl: 'https://qmille.github.io/CRP-458/images/Airport_pin.png,
           iconSize: [15, 15],
           iconAnchor: [5, 10],
           popupAnchor: [0, -10]
