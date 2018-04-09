@@ -247,7 +247,7 @@ $(document).ready(function() {
   function getWeather(callback) {
     console.log(city);
     var url =
-      'http://api.openweathermap.org/data/2.5/weather?q=' + city +'&mode=json&units=imperial&appid=c4e073bb9cd6434b872ee452ef7a0449';
+      'https://api.openweathermap.org/data/2.5/weather?q=' + city +'&mode=json&units=imperial&appid=c4e073bb9cd6434b872ee452ef7a0449';
     $.ajax({
       dataType: "jsonp",
       url: url,
