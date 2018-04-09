@@ -316,7 +316,7 @@ var controlLayers = L.control.layers(baseLayers).addTo(map);
 
 });
 $.getJSON("https://qmille.github.io/CRP-458/New_Airports.geojson", function(geojson) {
-  var geojsonLayer = L.geoJson(geojson, {
+  var geojsonLayer2 = L.geoJson(geojson, {
     pointToLayer: function(feature, latLng) {
       return new L.Marker(latLng, {
         icon: new myIcon({
@@ -331,8 +331,8 @@ $.getJSON("https://qmille.github.io/CRP-458/New_Airports.geojson", function(geoj
         htmlText = "</strong>Code: <b>"  + feature.properties.code + "</b><br>Name: <b>"  + feature.properties.name + "</b><br>City: <b>"  + feature.properties.city + "</b>"
       layer.bindPopup(htmlText)
     }
-  });//.addTo(map);
-  controlLayers.addOverlay(geojsonLayer, 'Airports');
+  })//.addTo(map);
+  controlLayers.addOverlay(geojsonLayer2, 'Airports');
 });
     L.control.scale().addTo(map);
 
