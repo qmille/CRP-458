@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta name="description" content="CRP 458 Assignment 15-Quincy Miller">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Assignment 15-QM</title>
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="https://abebrese.github.io/LA558/Markers/Leaflet.awesome-markers/leaflet.awesome-markers.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
+
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous">
+  </script>
+	   
+	<script src="https://qmille.github.io/CRP-458/leaflet.pattern-src.js"></script>
+	  
+	<script src="https://profseeger.github.io/LA558/data/simpleCounties.js"></script>
+	  
+  <script src="https://abebrese.github.io/LA558/Markers/Leaflet.awesome-markers/leaflet.awesome-markers.min.js"></script>
+      
+      <script src="https://opendata.arcgis.com/datasets/1160b7d2745f4e3eabb466ba7e69391e_0.geojson"></script>
+      
+      <script src="https://qmille.github.io/CRP-458/Iowa_Trails.json"></script>
+      
+  
+<style id="jsbin-css">
+
+
+#map {
+
+     position:relative;
+     width: 990px;
+     height: 400px;
+
+}
+#container {
+	background-color: white;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+   border-style: solid;
+   border-width: 5px;
+}
+#header, #footer {
+	clear: both;
+	padding: 10px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+
+.btn-group
+{
+ background-color: #084594;
+}
+
+</style>
+</head>
+
+  <body>
+    <div id="container">
+   <div id = "header">
+    <h2> CRP 458 </h2>
+    <h3> Assignment 15 - Quincy Miller </h3>
+   </div>
+        <div class="btn-group " data-toggle="buttons">
+          <label class="btn btn-primary" id="landmarks_all">
+            <input type="radio" name="options" id="Major_Cities" autocomplete="off"> Major Cities
+          </label>
+          <label class="btn btn-primary" id="all-university">
+            <input type="radio" name="options" id="university" autocomplete="off"> Universities
+          </label>
+            <label class="btn btn-primary" id="all-State_Parks">
+            <input type="radio" name="options" id="State_Parks" autocomplete="off"> State Parks </label>
+
+    <div id="map"></div>
+  
+    </div>
+        
+  <script>
+      
+$(document).ready(function(){
+  
+//Base layers and overlays
+var OSM = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+	maxZoom: 18
+});
+
+//create the maps
+var map = L.map('map', {
+	center: new L.LatLng(42.0, -93.6208),
+	zoom: 8,
+	layers: [OSM]
+});
+
+
+//four predefined colors returned based on value submitted - not normalized
+function getColor(d) {
+	return d >= 75 ? "#27AE60":	
+	d >= 50 ? "#D4AC0D":
+	d >= 25 ? "#A93226":
+	'white';
+}
+
+var myData1 = L.geoJson(simpleCounties, {
+    onEachFeature: function (feature, layer) {
+	    layer.setStyle({
+			weight: 1,
+        opacity:1,
+        dashArray:'1',
+			color: 'black',
+			fillColor: getColor(feature.properties.CO_FIPS),
+			fillOpacity: 0.5
+		});
+   }
+}).addTo(map);
+
+
+
+//four predefined hatch patterns with pattern0 having no hatch
+var bigStripe3 = new L.StripePattern({
+	weight: 1,
+	height: 2,
+	//spaceWeight: 1,
+	angle: 45,
+	opacity: 0.8,
+  color: '#084594',
+	spaceOpacity: 0.15,
+});
+bigStripe3.addTo(map);
+
+var bigStripe2 = new L.StripePattern({
+	weight: 1,
+	height: 4,
+	//spaceWeight: 5,
+	angle: 45,
+	opacity: 1,
+	spaceOpacity: 0.5,
+});
+bigStripe2.addTo(map);
+
+var bigStripe1 = new L.StripePattern({
+	weight: 1,
+	height: 8,
+	//spaceWeight: 5,
+	angle: 45,
+	opacity: 1,
+	spaceOpacity: 0.0,
+});
+bigStripe1.addTo(map);
+
+var bigStripe0 = new L.StripePattern({
+	opacity: 0.0,
+	spaceOpacity: 0.0,
+});
+bigStripe0.addTo(map);
+
+//Determine Hatch pattern based on value passed as d
+function getPattern(d) {
+	return d >= 158000 ? bigStripe3:	
+	d >= 154000 ? bigStripe2:
+	d >= 150000 ? bigStripe1:
+	bigStripe0;
+}
+
+
+var myData2 = L.geoJson(simpleCounties, {
+    onEachFeature: function (feature, layer) {
+	    layer.setStyle({
+			weight: 1,
+			color: 'black',
+			fillPattern: getPattern(feature.properties.PERIMETER),
+			fillOpacity: 0.75
+		});
+   }
+}).addTo(map);
+
+  var universityIcon = L.AwesomeMarkers.icon({
+  prefix: 'fa',
+  spin : 'true' ,
+  markerColor: 'green',
+  icon: 'fa-university'
+});
+
+
+var State_ParkIcon = 	L.AwesomeMarkers.icon({
+	 prefix: 'fa',
+  markerColor: 'green',
+  icon: 'fa-star'
+});
+
+
+var locations=$.getJSON("https://abebrese.github.io/LA558/data/locations.geojson");
+
+locations.then(function(data) {
+
+
+
+  var University = L.geoJson(data, {
+    filter: function(feature, layer) {
+      return feature.properties.Landmark_Type == "University";
+    },
+    pointToLayer: function(feature, latlng) {
+      return L.marker(latlng, {
+        icon: universityIcon
+      }).on('mouseover', function() {
+        this.bindPopup(feature.properties.Name).openPopup();
+      });
+    }
+  });
+
+ var State_Park = L.geoJson(data, {
+    filter: function(feature, layer) {
+      return feature.properties.Landmark_Type == "State_Park";
+    },
+    pointToLayer: function(feature, latlng) {
+      return L.marker(latlng, {
+        icon:State_ParkIcon
+      }).on('mouseover', function() {
+        this.bindPopup(feature.properties.Name).openPopup();
+      });
+    }
+  });
+
+        var landmarks_all = L.geoJson(data, {
+            filter: function(feature, layer) {
+                return feature.properties.Landmark_Type != "zzzzzz";
+            },
+            pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {
+                }).on('click', function() {
+                    this.bindPopup(feature.properties.Name).openPopup();
+                });
+            }
+        });
+
+
+  map.fitBounds(landmarks_all.getBounds(), {
+    padding: [50, 50]
+  });
+
+University.addTo(map);
+State_Park.addTo(map);
+
+
+  $("#landmarks_all").click(function() {
+    map.addLayer(University);
+    map.addLayer(State_Park);
+  });
+  $("#all-university").click(function() {
+    map.addLayer(University);
+    map.removeLayer(State_Park);
+  });
+
+  $("#all-State_Parks").click(function() {
+    map.removeLayer(University);
+    map.addLayer(State_Park);
+  });
+
+
+});
+    
+L.control.layers(baseMaps).addTo(map);
+});
+</script>
+        
+<script src="https://static.jsbin.com/js/render/edit.js?4.1.4"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"https://static.jsbin.com","root":"https://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
