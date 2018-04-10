@@ -1,0 +1,1548 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "5g7b-2jqf",
+      "name" : "Iowa Trails",
+      "attribution" : "Iowa Department of Transportation - Office of Systems Planning",
+      "attributionLink" : "https://gis.iowadot.gov/public/rest/services/Systems_Planning/Trails/MapServer/0",
+      "averageRating" : 0,
+      "category" : "Transportation & Utilities",
+      "createdAt" : 1465413448,
+      "description" : "Non-automotive trails in Iowa.",
+      "displayType" : "map",
+      "downloadCount" : 55,
+      "hideFromCatalog" : false,
+      "hideFromDataJson" : false,
+      "indexUpdatedAt" : 1521502183,
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 21518487,
+      "provenance" : "official",
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1465413612,
+      "publicationGroup" : 11211952,
+      "publicationStage" : "published",
+      "rowClass" : "",
+      "rowsUpdatedAt" : 1465413448,
+      "tableId" : 11211952,
+      "totalTimesRated" : 0,
+      "viewCount" : 212,
+      "viewLastModified" : 1521501160,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : 258167914,
+        "name" : "ID",
+        "dataTypeName" : "number",
+        "description" : "ID",
+        "fieldName" : "id",
+        "position" : 1,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36622968,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "13326.50436432638",
+          "largest" : "22741",
+          "null" : 0,
+          "top" : [ {
+            "item" : "20184",
+            "count" : 20
+          }, {
+            "item" : "14056",
+            "count" : 19
+          }, {
+            "item" : "14122",
+            "count" : 18
+          }, {
+            "item" : "14066",
+            "count" : 17
+          }, {
+            "item" : "14121",
+            "count" : 16
+          }, {
+            "item" : "14123",
+            "count" : 15
+          }, {
+            "item" : "14105",
+            "count" : 14
+          }, {
+            "item" : "14124",
+            "count" : 13
+          }, {
+            "item" : "14142",
+            "count" : 12
+          }, {
+            "item" : "14148",
+            "count" : 11
+          }, {
+            "item" : "22409",
+            "count" : 10
+          } ],
+          "smallest" : "7",
+          "sum" : "35115339"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167915,
+        "name" : "MPORPA",
+        "dataTypeName" : "number",
+        "description" : "MPO - RPA",
+        "fieldName" : "mporpa",
+        "position" : 2,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36622969,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "8.933965844402277",
+          "largest" : "27",
+          "null" : 0,
+          "top" : [ {
+            "item" : "8",
+            "count" : 20
+          }, {
+            "item" : "4",
+            "count" : 19
+          }, {
+            "item" : "16",
+            "count" : 18
+          }, {
+            "item" : "7",
+            "count" : 17
+          }, {
+            "item" : "5",
+            "count" : 16
+          }, {
+            "item" : "10",
+            "count" : 15
+          }, {
+            "item" : "9",
+            "count" : 14
+          }, {
+            "item" : "18",
+            "count" : 13
+          }, {
+            "item" : "11",
+            "count" : 12
+          }, {
+            "item" : "1",
+            "count" : 11
+          }, {
+            "item" : "26",
+            "count" : 10
+          }, {
+            "item" : "24",
+            "count" : 9
+          }, {
+            "item" : "12",
+            "count" : 8
+          }, {
+            "item" : "2",
+            "count" : 7
+          }, {
+            "item" : "20",
+            "count" : 6
+          }, {
+            "item" : "19",
+            "count" : 5
+          }, {
+            "item" : "6",
+            "count" : 4
+          }, {
+            "item" : "14",
+            "count" : 3
+          }, {
+            "item" : "15",
+            "count" : 2
+          }, {
+            "item" : "23",
+            "count" : 1
+          } ],
+          "smallest" : "0",
+          "sum" : "23541"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167916,
+        "name" : "NAME",
+        "dataTypeName" : "text",
+        "description" : "Name",
+        "fieldName" : "name",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36622970,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "largest" : "Upper Explorerland Regional Planning Commission ",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Siouxland Interstate Metropolitan Planning Council",
+            "count" : 20
+          }, {
+            "item" : "Bi-State Regional Commission",
+            "count" : 19
+          }, {
+            "item" : "Iowa Northland Regional Transportation Authority",
+            "count" : 18
+          }, {
+            "item" : "Johnson County Council of Governments",
+            "count" : 17
+          }, {
+            "item" : "Des Moines Area Metropolitan Planning Organization",
+            "count" : 16
+          }, {
+            "item" : "Upper Explorerland Regional Planning Commission ",
+            "count" : 15
+          }, {
+            "item" : "Iowa Northland Regional Council of Governments",
+            "count" : 14
+          }, {
+            "item" : "North Iowa Area Council of Governments",
+            "count" : 13
+          }, {
+            "item" : "Ames Area Metropolitan Planning Organization",
+            "count" : 12
+          }, {
+            "item" : "Chariton Valley Planning & Development",
+            "count" : 11
+          }, {
+            "item" : "Area 15 Regional Planning Commission",
+            "count" : 10
+          }, {
+            "item" : "Northwest Iowa Planning & Development Commission",
+            "count" : 9
+          }, {
+            "item" : "Linn County Regional Planning Commission",
+            "count" : 8
+          }, {
+            "item" : "Central Iowa Regional Transportation Planning Alliance",
+            "count" : 7
+          }, {
+            "item" : "East Central Iowa Council of Governments",
+            "count" : 6
+          }, {
+            "item" : "East Central Intergovernmental Association",
+            "count" : 5
+          }, {
+            "item" : "MIDAS Council of Governments",
+            "count" : 4
+          }, {
+            "item" : "Region Six Planning Commission",
+            "count" : 3
+          }, {
+            "item" : "ATURA Transportation Planning Affiliation",
+            "count" : 2
+          }, {
+            "item" : "Siouxland Regional Transportation Planning Association",
+            "count" : 1
+          } ],
+          "smallest" : "Ames Area Metropolitan Planning Organization"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167917,
+        "name" : "COUNTYNO",
+        "dataTypeName" : "number",
+        "description" : "County Number",
+        "fieldName" : "countyno",
+        "position" : 4,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36622971,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "56.66375711574953",
+          "largest" : "99",
+          "null" : 0,
+          "top" : [ {
+            "item" : "97",
+            "count" : 20
+          }, {
+            "item" : "82",
+            "count" : 19
+          }, {
+            "item" : "52",
+            "count" : 18
+          }, {
+            "item" : "77",
+            "count" : 17
+          }, {
+            "item" : "7",
+            "count" : 16
+          }, {
+            "item" : "85",
+            "count" : 15
+          }, {
+            "item" : "25",
+            "count" : 14
+          }, {
+            "item" : "57",
+            "count" : 13
+          }, {
+            "item" : "91",
+            "count" : 12
+          }, {
+            "item" : "31",
+            "count" : 11
+          }, {
+            "item" : "78",
+            "count" : 10
+          }, {
+            "item" : "84",
+            "count" : 9
+          }, {
+            "item" : "9",
+            "count" : 8
+          }, {
+            "item" : "10",
+            "count" : 7
+          }, {
+            "item" : "0",
+            "count" : 6
+          }, {
+            "item" : "30",
+            "count" : 5
+          }, {
+            "item" : "38",
+            "count" : 4
+          }, {
+            "item" : "56",
+            "count" : 3
+          }, {
+            "item" : "22",
+            "count" : 2
+          }, {
+            "item" : "19",
+            "count" : 1
+          } ],
+          "smallest" : "0",
+          "sum" : "149309"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167918,
+        "name" : "COUNTY_NAME",
+        "dataTypeName" : "text",
+        "description" : "County Name",
+        "fieldName" : "county_name",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36622972,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "largest" : "WRIGHT",
+          "null" : 0,
+          "top" : [ {
+            "item" : "WOODBURY",
+            "count" : 20
+          }, {
+            "item" : "SCOTT",
+            "count" : 19
+          }, {
+            "item" : "JOHNSON",
+            "count" : 18
+          }, {
+            "item" : "POLK",
+            "count" : 17
+          }, {
+            "item" : "BLACK HAWK",
+            "count" : 16
+          }, {
+            "item" : "STORY",
+            "count" : 15
+          }, {
+            "item" : "DALLAS",
+            "count" : 14
+          }, {
+            "item" : "LINN",
+            "count" : 13
+          }, {
+            "item" : "WARREN",
+            "count" : 12
+          }, {
+            "item" : "DUBUQUE",
+            "count" : 11
+          }, {
+            "item" : "POTTAWATTAMIE",
+            "count" : 10
+          }, {
+            "item" : "SIOUX",
+            "count" : 9
+          }, {
+            "item" : "BREMER",
+            "count" : 8
+          }, {
+            "item" : "BUCHANAN",
+            "count" : 7
+          }, {
+            "item" : "Illegal County",
+            "count" : 6
+          }, {
+            "item" : "DICKINSON",
+            "count" : 5
+          }, {
+            "item" : "GRUNDY",
+            "count" : 4
+          }, {
+            "item" : "LEE",
+            "count" : 3
+          }, {
+            "item" : "CLAYTON",
+            "count" : 2
+          }, {
+            "item" : "CHICKASAW",
+            "count" : 1
+          } ],
+          "smallest" : "ALLAMAKEE"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167919,
+        "name" : "CITYNO",
+        "dataTypeName" : "number",
+        "description" : "City Number",
+        "fieldName" : "cityno",
+        "position" : 6,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36622973,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "3330.453889943074",
+          "largest" : "8502",
+          "null" : 0,
+          "top" : [ {
+            "item" : "0",
+            "count" : 20
+          }, {
+            "item" : "1557",
+            "count" : 19
+          }, {
+            "item" : "3715",
+            "count" : 18
+          }, {
+            "item" : "8155",
+            "count" : 17
+          }, {
+            "item" : "1185",
+            "count" : 16
+          }, {
+            "item" : "155",
+            "count" : 15
+          }, {
+            "item" : "7057",
+            "count" : 14
+          }, {
+            "item" : "8260",
+            "count" : 13
+          }, {
+            "item" : "3827",
+            "count" : 12
+          }, {
+            "item" : "7875",
+            "count" : 11
+          }, {
+            "item" : "5557",
+            "count" : 10
+          }, {
+            "item" : "187",
+            "count" : 9
+          }, {
+            "item" : "1187",
+            "count" : 8
+          }, {
+            "item" : "1945",
+            "count" : 7
+          }, {
+            "item" : "1642",
+            "count" : 6
+          }, {
+            "item" : "3125",
+            "count" : 5
+          }, {
+            "item" : "1425",
+            "count" : 4
+          }, {
+            "item" : "7662",
+            "count" : 3
+          }, {
+            "item" : "2100",
+            "count" : 2
+          }, {
+            "item" : "4775",
+            "count" : 1
+          } ],
+          "smallest" : "0",
+          "sum" : "8775746"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167920,
+        "name" : "CITY_NAME",
+        "dataTypeName" : "text",
+        "description" : "City Name",
+        "fieldName" : "city_name",
+        "position" : 7,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36622974,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "largest" : "WINTHROP",
+          "null" : 0,
+          "top" : [ {
+            "item" : "RURAL",
+            "count" : 20
+          }, {
+            "item" : "CORALVILLE",
+            "count" : 19
+          }, {
+            "item" : "IOWA CITY",
+            "count" : 18
+          }, {
+            "item" : "WATERLOO",
+            "count" : 17
+          }, {
+            "item" : "CEDAR FALLS",
+            "count" : 16
+          }, {
+            "item" : "AMES",
+            "count" : 15
+          }, {
+            "item" : "SIOUX CITY",
+            "count" : 14
+          }, {
+            "item" : "WEST DES MOINES",
+            "count" : 13
+          }, {
+            "item" : "JOHNSTON",
+            "count" : 12
+          }, {
+            "item" : "URBANDALE",
+            "count" : 11
+          }, {
+            "item" : "NORTH LIBERTY",
+            "count" : 10
+          }, {
+            "item" : "ANKENY",
+            "count" : 9
+          }, {
+            "item" : "CEDAR RAPIDS",
+            "count" : 8
+          }, {
+            "item" : "DES MOINES",
+            "count" : 7
+          }, {
+            "item" : "COUNCIL BLUFFS",
+            "count" : 6
+          }, {
+            "item" : "GRIMES",
+            "count" : 5
+          }, {
+            "item" : "CLIVE",
+            "count" : 4
+          }, {
+            "item" : "TIFFIN",
+            "count" : 3
+          }, {
+            "item" : "DUBUQUE",
+            "count" : 2
+          }, {
+            "item" : "MARION",
+            "count" : 1
+          } ],
+          "smallest" : "ADEL"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167921,
+        "name" : "STATE",
+        "dataTypeName" : "text",
+        "description" : "State",
+        "fieldName" : "state",
+        "position" : 8,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36622975,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2582,
+          "largest" : "WI",
+          "null" : 53,
+          "top" : [ {
+            "item" : "IA",
+            "count" : 20
+          }, {
+            "item" : "SD",
+            "count" : 19
+          }, {
+            "item" : "NE",
+            "count" : 18
+          }, {
+            "item" : "IL",
+            "count" : 17
+          }, {
+            "item" : "WI",
+            "count" : 16
+          } ],
+          "smallest" : "IA"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167968,
+        "name" : "DESCRIPTION",
+        "dataTypeName" : "text",
+        "description" : "Description",
+        "fieldName" : "description",
+        "position" : 9,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623022,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 1252,
+          "largest" : "Zeller St to Bradley Pl",
+          "null" : 1383,
+          "top" : [ {
+            "item" : "Singletrack",
+            "count" : 20
+          }, {
+            "item" : "Rumble Strip",
+            "count" : 19
+          }, {
+            "item" : "Meredith Drive to Douglas Parkway",
+            "count" : 18
+          }, {
+            "item" : "N. Madison St to N. Governor St",
+            "count" : 17
+          }, {
+            "item" : " ",
+            "count" : 16
+          }, {
+            "item" : "River Drive North to Plymouth County",
+            "count" : 15
+          }, {
+            "item" : "River Dr to Adams Nature Reserve",
+            "count" : 14
+          }, {
+            "item" : "Sheldon Avenue to Wallace Road - Bicycle Friendly Street",
+            "count" : 13
+          }, {
+            "item" : "Hyland Avenue (east to) to Stange Road",
+            "count" : 12
+          }, {
+            "item" : "Pammel Drive to Union Drive",
+            "count" : 11
+          }, {
+            "item" : "Lincoln Way to Iowa State University Campus Trail",
+            "count" : 10
+          }, {
+            "item" : "Subdivision",
+            "count" : 9
+          }, {
+            "item" : "12th Ave",
+            "count" : 8
+          }, {
+            "item" : "8th Ave/30th St/10th Ave from 12th St to 35th St ",
+            "count" : 7
+          }, {
+            "item" : "North of Hickman Avenue to University Avenue",
+            "count" : 6
+          }, {
+            "item" : "North to Northwest Beaver Drive and East and South to Northwest 70th Avenue circling Ridgedale Court",
+            "count" : 5
+          }, {
+            "item" : "Within Sheldon",
+            "count" : 4
+          }, {
+            "item" : "Parallels 19th Street SW from Coolidge (W to) to Mason City CL; Original Mileage 7.5 Mi",
+            "count" : 3
+          }, {
+            "item" : "North Liberty Rd. to Dubuque St. NE",
+            "count" : 2
+          }, {
+            "item" : "Miller Riverview Park Entrance to Ski Club Entrance",
+            "count" : 1
+          } ],
+          "smallest" : " "
+        },
+        "format" : { }
+      }, {
+        "id" : 258167969,
+        "name" : "FACILITY_NAME",
+        "dataTypeName" : "text",
+        "description" : "Facility Name",
+        "fieldName" : "facility_name",
+        "position" : 10,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623023,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 1792,
+          "largest" : "Ziedler Park Trail",
+          "null" : 843,
+          "top" : [ {
+            "item" : "North Warrior Lane Trail",
+            "count" : 20
+          }, {
+            "item" : "Sheldon Recreational Trail",
+            "count" : 19
+          }, {
+            "item" : "Jersey Ridge Road",
+            "count" : 18
+          }, {
+            "item" : "Duck Creek Parkway",
+            "count" : 17
+          }, {
+            "item" : "Mississippi Riverwalk Recreation Trail",
+            "count" : 16
+          }, {
+            "item" : "Heron Pond Trail",
+            "count" : 15
+          }, {
+            "item" : "Copper Creek Trail",
+            "count" : 14
+          }, {
+            "item" : "Eastern Ave",
+            "count" : 13
+          }, {
+            "item" : "Squaw Creek Park Trail",
+            "count" : 12
+          }, {
+            "item" : "Lincoln Walk Trail",
+            "count" : 11
+          }, {
+            "item" : "Pete's Pond Bike Trail",
+            "count" : 10
+          }, {
+            "item" : "Paul Skeffington Memorial Trail",
+            "count" : 9
+          }, {
+            "item" : "Eldridge-Long Grove Recreational Trail",
+            "count" : 8
+          }, {
+            "item" : "Fayette Recreational Trail",
+            "count" : 7
+          }, {
+            "item" : "Market Street Pedestrian Facility",
+            "count" : 6
+          }, {
+            "item" : "Wilson Ave Bike lane",
+            "count" : 5
+          }, {
+            "item" : "Windflower Park Trails",
+            "count" : 4
+          }, {
+            "item" : "Bike lane",
+            "count" : 3
+          }, {
+            "item" : "Boyson Rd NE Bike lane",
+            "count" : 2
+          }, {
+            "item" : "Cherokee Park Trail",
+            "count" : 1
+          } ],
+          "smallest" : "10th Ave SW Trail\n"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167970,
+        "name" : "TYPE_FACILITY",
+        "dataTypeName" : "number",
+        "description" : "Facility Type",
+        "fieldName" : "type_facility",
+        "position" : 11,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36623024,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "2.556736242884250",
+          "largest" : "6",
+          "null" : 0,
+          "top" : [ {
+            "item" : "1",
+            "count" : 20
+          }, {
+            "item" : "0",
+            "count" : 19
+          }, {
+            "item" : "5",
+            "count" : 18
+          }, {
+            "item" : "3",
+            "count" : 17
+          }, {
+            "item" : "2",
+            "count" : 16
+          }, {
+            "item" : "4",
+            "count" : 15
+          }, {
+            "item" : "6",
+            "count" : 14
+          } ],
+          "smallest" : "0",
+          "sum" : "6737"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167971,
+        "name" : "FAC_DESC",
+        "dataTypeName" : "text",
+        "description" : "Facility Description",
+        "fieldName" : "fac_desc",
+        "position" : 12,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623025,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "largest" : "Widened Sidewalk",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Path",
+            "count" : 20
+          }, {
+            "item" : "No Type Facility",
+            "count" : 19
+          }, {
+            "item" : "Widened Sidewalk",
+            "count" : 18
+          }, {
+            "item" : "Shoulder",
+            "count" : 17
+          }, {
+            "item" : "Lane",
+            "count" : 16
+          }, {
+            "item" : "Roadway",
+            "count" : 15
+          }, {
+            "item" : "Shared Road",
+            "count" : 14
+          } ],
+          "smallest" : "Lane"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167972,
+        "name" : "SURF_WIDTH",
+        "dataTypeName" : "number",
+        "description" : "Surface Width",
+        "fieldName" : "surf_width",
+        "position" : 13,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36623026,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2619,
+          "average" : "4.457044673539519",
+          "largest" : "22",
+          "null" : 16,
+          "top" : [ {
+            "item" : "10",
+            "count" : 20
+          }, {
+            "item" : "0",
+            "count" : 19
+          }, {
+            "item" : "22",
+            "count" : 18
+          }, {
+            "item" : "8",
+            "count" : 17
+          }, {
+            "item" : "12",
+            "count" : 16
+          }, {
+            "item" : "6",
+            "count" : 15
+          }, {
+            "item" : "5",
+            "count" : 14
+          }, {
+            "item" : "9",
+            "count" : 13
+          }, {
+            "item" : "4",
+            "count" : 12
+          }, {
+            "item" : "11",
+            "count" : 11
+          }, {
+            "item" : "2",
+            "count" : 10
+          }, {
+            "item" : "20",
+            "count" : 9
+          }, {
+            "item" : "7",
+            "count" : 8
+          }, {
+            "item" : "5.5",
+            "count" : 7
+          }, {
+            "item" : "3",
+            "count" : 6
+          }, {
+            "item" : "14",
+            "count" : 5
+          } ],
+          "smallest" : "0",
+          "sum" : "11673.0"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167973,
+        "name" : "OWNER",
+        "dataTypeName" : "number",
+        "description" : "Owner",
+        "fieldName" : "owner",
+        "position" : 14,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36623027,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "1.304743833017078",
+          "largest" : "6",
+          "null" : 0,
+          "top" : [ {
+            "item" : "0",
+            "count" : 20
+          }, {
+            "item" : "1",
+            "count" : 19
+          }, {
+            "item" : "2",
+            "count" : 18
+          }, {
+            "item" : "6",
+            "count" : 17
+          }, {
+            "item" : "3",
+            "count" : 16
+          }, {
+            "item" : "4",
+            "count" : 15
+          }, {
+            "item" : "5",
+            "count" : 14
+          } ],
+          "smallest" : "0",
+          "sum" : "3438"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167974,
+        "name" : "OWNER_DESC",
+        "dataTypeName" : "text",
+        "description" : "Owner Description",
+        "fieldName" : "owner_desc",
+        "position" : 15,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623028,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "largest" : "State of Iowa",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Other",
+            "count" : 20
+          }, {
+            "item" : "County",
+            "count" : 19
+          }, {
+            "item" : "City",
+            "count" : 18
+          }, {
+            "item" : "State of Iowa",
+            "count" : 17
+          }, {
+            "item" : "County/City",
+            "count" : 16
+          }, {
+            "item" : "Non-Profit",
+            "count" : 15
+          }, {
+            "item" : "Federal Government",
+            "count" : 14
+          } ],
+          "smallest" : "City"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167975,
+        "name" : "OWNERNAME",
+        "dataTypeName" : "text",
+        "description" : "Owner Name",
+        "fieldName" : "ownername",
+        "position" : 16,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623029,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 1573,
+          "largest" : "Winneshiek County",
+          "null" : 1062,
+          "top" : [ {
+            "item" : "City of Iowa City",
+            "count" : 20
+          }, {
+            "item" : "City of Ankeny",
+            "count" : 19
+          }, {
+            "item" : "City of Waterloo",
+            "count" : 18
+          }, {
+            "item" : "City of Cedar Falls",
+            "count" : 17
+          }, {
+            "item" : "City of Ames",
+            "count" : 16
+          }, {
+            "item" : "City of Urbandale",
+            "count" : 15
+          }, {
+            "item" : "City of West Des Moines",
+            "count" : 14
+          }, {
+            "item" : "City of Altoona",
+            "count" : 13
+          }, {
+            "item" : "City of Johnston",
+            "count" : 12
+          }, {
+            "item" : "Story County",
+            "count" : 11
+          }, {
+            "item" : "City of Cedar Rapids",
+            "count" : 10
+          }, {
+            "item" : "City of Clive",
+            "count" : 9
+          }, {
+            "item" : "City of Des Moines",
+            "count" : 8
+          }, {
+            "item" : "City of Grimes",
+            "count" : 7
+          }, {
+            "item" : "City of North Liberty",
+            "count" : 6
+          }, {
+            "item" : "City of Waverly",
+            "count" : 5
+          }, {
+            "item" : "Iowa State University",
+            "count" : 4
+          }, {
+            "item" : "City of Asbury",
+            "count" : 3
+          }, {
+            "item" : "City of Dubuque",
+            "count" : 2
+          }, {
+            "item" : "City of Nevada",
+            "count" : 1
+          } ],
+          "smallest" : "Adel"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167976,
+        "name" : "FEE",
+        "dataTypeName" : "text",
+        "description" : "Fee",
+        "fieldName" : "fee",
+        "position" : 17,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623030,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 1570,
+          "largest" : "Y",
+          "null" : 1065,
+          "top" : [ {
+            "item" : "N",
+            "count" : 20
+          }, {
+            "item" : "Y",
+            "count" : 19
+          } ],
+          "smallest" : "N"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167977,
+        "name" : "STATUS",
+        "dataTypeName" : "number",
+        "description" : "Status",
+        "fieldName" : "status",
+        "position" : 18,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36623031,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "1",
+          "largest" : "1",
+          "null" : 0,
+          "top" : [ {
+            "item" : "1",
+            "count" : 20
+          } ],
+          "smallest" : "1",
+          "sum" : "2635"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167978,
+        "name" : "STATUS_DESC",
+        "dataTypeName" : "text",
+        "description" : "Status Description",
+        "fieldName" : "status_desc",
+        "position" : 19,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623032,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "largest" : "Open",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Open",
+            "count" : 20
+          } ],
+          "smallest" : "Open"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167979,
+        "name" : "TRAILHEAD",
+        "dataTypeName" : "text",
+        "description" : "Trailhead",
+        "fieldName" : "trailhead",
+        "position" : 20,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623033,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 927,
+          "largest" : "Y",
+          "null" : 1708,
+          "top" : [ {
+            "item" : "N",
+            "count" : 20
+          }, {
+            "item" : "Y",
+            "count" : 19
+          } ],
+          "smallest" : "N"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167980,
+        "name" : "HC_ACCESS",
+        "dataTypeName" : "text",
+        "description" : "Handicap Access",
+        "fieldName" : "hc_access",
+        "position" : 21,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623034,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 458,
+          "largest" : "Y",
+          "null" : 2177,
+          "top" : [ {
+            "item" : "Y",
+            "count" : 20
+          }, {
+            "item" : "N",
+            "count" : 19
+          } ],
+          "smallest" : "N"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167981,
+        "name" : "HORSE",
+        "dataTypeName" : "text",
+        "description" : "Horses Allowed",
+        "fieldName" : "horse",
+        "position" : 22,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623035,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 1306,
+          "largest" : "Y",
+          "null" : 1329,
+          "top" : [ {
+            "item" : "N",
+            "count" : 20
+          }, {
+            "item" : "Y",
+            "count" : 19
+          } ],
+          "smallest" : "N"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167982,
+        "name" : "SKI",
+        "dataTypeName" : "text",
+        "description" : "Skiing Allowed",
+        "fieldName" : "ski",
+        "position" : 23,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623036,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 562,
+          "largest" : "Y",
+          "null" : 2073,
+          "top" : [ {
+            "item" : "N",
+            "count" : 20
+          }, {
+            "item" : "Y",
+            "count" : 19
+          } ],
+          "smallest" : "N"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167983,
+        "name" : "SKATE",
+        "dataTypeName" : "text",
+        "description" : "Skating Allowed",
+        "fieldName" : "skate",
+        "position" : 24,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623037,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 575,
+          "largest" : "Y",
+          "null" : 2060,
+          "top" : [ {
+            "item" : "Y",
+            "count" : 20
+          }, {
+            "item" : "N",
+            "count" : 19
+          } ],
+          "smallest" : "N"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167984,
+        "name" : "SNOWMOBILE",
+        "dataTypeName" : "text",
+        "description" : "Snowmobile Allowed",
+        "fieldName" : "snowmobile",
+        "position" : 25,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623038,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 1325,
+          "largest" : "Y",
+          "null" : 1310,
+          "top" : [ {
+            "item" : "N",
+            "count" : 20
+          }, {
+            "item" : "Y",
+            "count" : 19
+          } ],
+          "smallest" : "N"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167985,
+        "name" : "SURF_TYPE",
+        "dataTypeName" : "number",
+        "description" : "Surface Type",
+        "fieldName" : "surf_type",
+        "position" : 26,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36623039,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "2.114611005692600",
+          "largest" : "12",
+          "null" : 0,
+          "top" : [ {
+            "item" : "2",
+            "count" : 20
+          }, {
+            "item" : "3",
+            "count" : 19
+          }, {
+            "item" : "1",
+            "count" : 18
+          }, {
+            "item" : "0",
+            "count" : 17
+          }, {
+            "item" : "4",
+            "count" : 16
+          }, {
+            "item" : "8",
+            "count" : 15
+          }, {
+            "item" : "7",
+            "count" : 14
+          }, {
+            "item" : "5",
+            "count" : 13
+          }, {
+            "item" : "12",
+            "count" : 12
+          }, {
+            "item" : "10",
+            "count" : 11
+          }, {
+            "item" : "11",
+            "count" : 10
+          }, {
+            "item" : "6",
+            "count" : 9
+          } ],
+          "smallest" : "0",
+          "sum" : "5572"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167986,
+        "name" : "SURF_DESC",
+        "dataTypeName" : "text",
+        "description" : "Surface Description",
+        "fieldName" : "surf_desc",
+        "position" : 27,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623040,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "largest" : "Wood Chips",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Concrete",
+            "count" : 20
+          }, {
+            "item" : "Asphalt/Concrete",
+            "count" : 19
+          }, {
+            "item" : "Asphalt",
+            "count" : 18
+          }, {
+            "item" : "No Surface Type",
+            "count" : 17
+          }, {
+            "item" : "Granular",
+            "count" : 16
+          }, {
+            "item" : "Crushed Limestone",
+            "count" : 15
+          }, {
+            "item" : "Grass",
+            "count" : 14
+          }, {
+            "item" : "Asphalt/Granular",
+            "count" : 13
+          }, {
+            "item" : "Dirt",
+            "count" : 12
+          }, {
+            "item" : "Mixed Types",
+            "count" : 11
+          }, {
+            "item" : "Wood Chips",
+            "count" : 10
+          }, {
+            "item" : "Concrete/Granular",
+            "count" : 9
+          } ],
+          "smallest" : "Asphalt"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167987,
+        "name" : "CORRIDOR",
+        "dataTypeName" : "number",
+        "description" : "Corridor",
+        "fieldName" : "corridor",
+        "position" : 28,
+        "renderTypeName" : "number",
+        "tableColumnId" : 36623041,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "average" : "7.563187855787476",
+          "largest" : "9",
+          "null" : 0,
+          "top" : [ {
+            "item" : "9",
+            "count" : 20
+          }, {
+            "item" : "3",
+            "count" : 19
+          }, {
+            "item" : "8",
+            "count" : 18
+          }, {
+            "item" : "1",
+            "count" : 17
+          }, {
+            "item" : "0",
+            "count" : 16
+          }, {
+            "item" : "6",
+            "count" : 15
+          }, {
+            "item" : "2",
+            "count" : 14
+          }, {
+            "item" : "7",
+            "count" : 13
+          }, {
+            "item" : "5",
+            "count" : 12
+          }, {
+            "item" : "4",
+            "count" : 11
+          } ],
+          "smallest" : "0",
+          "sum" : "19929"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167988,
+        "name" : "CORR_DESC",
+        "dataTypeName" : "text",
+        "description" : "Corridor Description",
+        "fieldName" : "corr_desc",
+        "position" : 29,
+        "renderTypeName" : "text",
+        "tableColumnId" : 36623042,
+        "width" : 100,
+        "cachedContents" : {
+          "non_null" : 2635,
+          "largest" : "not defined",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Level 3 - Trails of Local Significance",
+            "count" : 20
+          }, {
+            "item" : "American Discovery Trail/Mississippi River Trail",
+            "count" : 19
+          }, {
+            "item" : "Level 2 - Trails of Regional Significance",
+            "count" : 18
+          }, {
+            "item" : "American Discovery Trail",
+            "count" : 17
+          }, {
+            "item" : "not defined",
+            "count" : 16
+          }, {
+            "item" : "Lewis and Clark Trail",
+            "count" : 15
+          }, {
+            "item" : "American Discovery Trail/Central Iowa Loop",
+            "count" : 14
+          }, {
+            "item" : "Mississippi River Trail",
+            "count" : 13
+          }, {
+            "item" : "Iowa Great Lakes Connection",
+            "count" : 12
+          }, {
+            "item" : "Central Iowa Loop",
+            "count" : 11
+          } ],
+          "smallest" : "American Discovery Trail"
+        },
+        "format" : { }
+      }, {
+        "id" : 258167989,
+        "name" : "FUNCTIONALLENGTH",
+        "dataTypeName" : "number",
+        "description" : "Functional Length",
+        "fieldName" : "functionallength",
+       {
+  "error" : true,
+  "message" : "Internal error",
+  "status" : 500
+}
