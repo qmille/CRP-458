@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="description" content="Assignment 16-QM">
+    <title>Assignment 16 - Quincy Miller</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+      
+    <script src="https://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+    <script src="https://leaflet.github.io/Leaflet.markercluster/example/realworld.388.js"></script>
+    <script	 src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>		
+	<script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>	
+
+      <style id="jsbin-css">
+
+
+#map {
+
+     position:relative;
+     width: 990px;
+     height: 400px;
+
+}
+#container {
+	background-color: white;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+   border-style: solid;
+   border-width: 5px;
+}
+#header, #footer {
+	clear: both;
+	padding: 10px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+          .mycluster {
+			width: 40px;
+			height: 40px;
+			background-color: skyblue;
+			text-align: center;
+			font-size: 20px;
+		}
+
+
+</style>
+
+  </head>
+
+  <body>
+      <div id = "container">
+      <div id = "header">
+    <h2> CRP 458 </h2>
+    <h3> Assignment 15 - Quincy Miller </h3>
+   </div>
+    <div id="map"></div>
+    
+</div>
+      
+      <script>
+
+          var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 18,
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			}),
+			latlng = L.latLng(43.651220, -79.383776);
+
+		var map = L.map('map', {center: latlng, zoom: 13, layers: [tiles]});
+var myArray = [];
+var max = 100;
+var min = 1;
+
+		//Custom radius and icon create function
+		var markers = L.markerClusterGroup({
+			maxClusterRadius: 120,
+			iconCreateFunction: function (cluster) {
+				var markers = cluster.getAllChildMarkers();
+				var n = 0;
+				for (var i = 0; i < markers.length; i++) {
+					n += markers[i].number;
+				}
+				return L.divIcon({ html: n, className: 'mycluster', iconSize: L.point(40, 40) });
+			},
+			//Disable all of the defaults:
+			spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: false
+		});
+
+
+		function populate() {
+			for (var i = 0; i < 100; i++) {
+				var m = L.marker(getRandomLatLng(map), { title: i });
+				m.number = i;
+				markers.addLayer(m);
+			}
+			return false;
+		}
+		function populateRandomVector() {
+			for (var i = 0, latlngs = [], len = 20; i < len; i++) {
+				latlngs.push(getRandomLatLng(map));
+			}
+			var path = L.polyline(latlngs);
+			map.addLayer(path);
+		}
+		function getRandomLatLng(map) {
+			var bounds = map.getBounds(),
+				southWest = bounds.getSouthWest(),
+				northEast = bounds.getNorthEast(),
+				lngSpan = northEast.lng - southWest.lng,
+				latSpan = northEast.lat - southWest.lat;
+
+			return L.latLng(
+					southWest.lat + latSpan * Math.random(),
+					southWest.lng + lngSpan * Math.random());
+		}
+
+		populate();
+		map.addLayer(markers);
+          
+          var shownLayer, polygon;
+
+		function removePolygon() {
+			if (shownLayer) {
+				shownLayer.setOpacity(1);
+				shownLayer = null;
+			}
+			if (polygon) {
+				map.removeLayer(polygon);
+				polygon = null;
+			}
+		};
+
+		markers.on('clustermouseover', function (a) {
+			removePolygon();
+
+			a.layer.setOpacity(0.2);
+			shownLayer = a.layer;
+			polygon = L.polygon(a.layer.getConvexHull());
+			map.addLayer(polygon);
+		});
+		markers.on('clustermouseout', removePolygon);
+		map.on('zoomend', removePolygon);
+          
+          //Basemaps
+var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	maxZoom: 17,
+	attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
+
+var Stamen_TonerLite = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+});
+
+var hybrid = L.tileLayer('https://{s}.{base}.maps.cit.api.here.com/maptile/2.1/{type}/{mapID}/hybrid.day/{z}/{x}/{y}/{size}/{format}?app_id={app_id}&app_code={app_code}&lg={language}', {
+	attribution: 'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
+	subdomains: '1234',
+	mapID: 'newest',
+	app_id: 'DKS1GUmxgQYbtM1RQM36',
+	app_code: '8UMwXACCWBcaRWgTKTZwFg',
+	base: 'aerial',
+	maxZoom: 20,
+	type: 'maptile',
+	language: 'eng',
+	format: 'png8',
+	size: '256'
+});
+        
+var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+          
+//create random points 
+
+for (i = 0; i < 100; i++) { 
+	x = 43.6512  + (Math.random() / 100);
+	y = -79.383776 + (Math.random() / 100);
+	z = Math.floor(Math.random() * (max - min + 1)) + min;
+	myArray.push([x, y, z]);
+    
+}
+console.log(myArray);
+
+
+
+var heatMap = L.heatLayer(myArray, {
+	minOpacity: 0.1,
+	maxZoom: 19,
+	max: 1.0,
+	radius: 20,
+	blur: 15,
+	gradient: {
+			0.2: 'yellow',
+			0.65: 'lime',
+			1: 'red'
+	}
+}).addTo(map);
+
+var landmarks = L.layerGroup();
+
+	L.marker([43.652440, -79.381963]).bindPopup('Old Toronto City Hall').addTo(landmarks),
+	L.marker([43.647185, -79.392398]).bindPopup('Canada Walk of Fame').addTo(landmarks),
+	L.marker([43.638625, -79.426477]).bindPopup('Toronto Carpet Factory (Historical)').addTo(landmarks),
+	L.marker([43.652516, -79.383595]).bindPopup('Nathan Phillips Square').addTo(landmarks);
+    L.marker([43.653518, -79.379473]).bindPopup('Former Toronto Dominion Bank').addTo(landmarks);
+          
+//layer control
+		var baseLayers = {
+        "OpenStreet Map": OpenStreetMap_Mapnik,
+        "Hybrid": hybrid,
+		"Topographic":OpenTopoMap,
+        "Black and White": Stamen_TonerLite
+        
+	};
+          
+	var overlays = {
+	"Heat Map": heatMap,
+	"Landmarks": landmarks,
+    "Markers": markers
+};
+		L.control.layers(baseLayers, overlays).addTo(map);
+          
+      </script>
+      
+  </body>
+
+</html>
+
