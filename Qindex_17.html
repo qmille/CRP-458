@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="description" content="Assignment 17-QM">
+    <title>Assignment 17 - Quincy Miller</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+      
+    <script src="https://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+    <script src="https://leaflet.github.io/Leaflet.markercluster/example/realworld.388.js"></script>
+    <script	 src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>		
+	<script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>	
+      
+      <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+
+      <style id="jsbin-css">
+
+
+#map {
+
+     position:relative;
+     width: 990px;
+     height: 400px;
+
+}
+#container {
+	background-color: white;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+   border-style: solid;
+   border-width: 5px;
+}
+#header, #footer {
+	clear: both;
+	padding: 10px;
+	background-color: slategrey;
+	color: white;
+	text-align: center;
+}
+          .mycluster {
+			width: 40px;
+			height: 40px;
+			background-color: skyblue;
+			text-align: center;
+			font-size: 20px;
+		}
+
+
+</style>
+
+  </head>
+
+  <body>
+      <div id = "container">
+      <div id = "header">
+    <h2> CRP 458 </h2>
+    <h3> Assignment 17 - Quincy Miller </h3>
+   </div>
+          <br><br>
+          Enter the address: <input type="text" id="myAddress"> <button type="button" id='geocode'>Geocode Me!</button>
+	  <br><br>
+          
+    <div id="map"></div>
+    
+</div>
+      
+      <script>
+      
+console.clear();
+
+var map = L.map('map').setView([42.025739, -93.646221], 10);
+
+          //Basemaps
+var Stamen_TonerLite = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+});
+
+var hybrid = L.tileLayer('https://{s}.{base}.maps.cit.api.here.com/maptile/2.1/{type}/{mapID}/hybrid.day/{z}/{x}/{y}/{size}/{format}?app_id={app_id}&app_code={app_code}&lg={language}', {
+	attribution: 'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
+	subdomains: '1234',
+	mapID: 'newest',
+	app_id: 'DKS1GUmxgQYbtM1RQM36',
+	app_code: '8UMwXACCWBcaRWgTKTZwFg',
+	base: 'aerial',
+	maxZoom: 20,
+	type: 'maptile',
+	language: 'eng',
+	format: 'png8',
+	size: '256'
+});
+        
+var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+//uncomment for testing
+//$('#myAddress').val('1307 Florida Ave., Ames, IA, 50014');
+
+
+$('#geocode').click(function () {
+    myAddress = encodeURI($('#myAddress').val());
+    //now take this address and send it to your geocoder of choice
+
+    //var geocodingAPI_URL = "http://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address="+myAddress+"&benchmark=9&format=json";
+
+
+    var geocodingAPI_URL = "http://maps.googleapis.com/maps/api/geocode/json?address=" + myAddress + "&sensor=true";
+
+    console.log(geocodingAPI_URL);
+
+    //Start Geocoding
+    $.getJSON(geocodingAPI_URL, function (json) {
+        //console.log(json.results[0].address_components);
+        //console.log(json.status);
+        var address = json.results[0].formatted_address;
+        var lat = json.results[0].geometry.location.lat;
+        var long = json.results[0].geometry.location.lng;
+        console.log(address);
+        console.log(lat);
+        console.log(long);
+        var county = '';
+        $.each(json.results[0].address_components, function (i, jsonData) {
+            level = jsonData.types[0];
+            if ('administrative_area_level_2' === level.toLowerCase()) {
+                county = (jsonData.short_name);
+            }
+        });
+        console.log("I am in " + county + "!");
+
+
+        //now add the marker to the map
+        var marker = L.marker([lat, long], {
+            draggable: false,
+            title: county,
+            opacity: 0.75
+        }).addTo(map);
+
+        marker.bindPopup(address).openPopup();
+		
+		map.setView([lat, long]);
+
+
+    });
+}); //end geocode click function
+          
+          var baseLayers = {
+        "OpenStreet Map": OpenStreetMap_Mapnik,
+        "Hybrid": hybrid,
+        "Black and White": Stamen_TonerLite
+        
+	};
+          
+          L.control.layers(baseLayers).addTo(map);
+          
+      </script>
+</body>
+
+</html>
