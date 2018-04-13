@@ -42,5 +42,7 @@
     <a href = "https://qmille.github.io/CRP-458/images/Airport_pin.png"> Images </a>
     <br>
     <a href = "https://qmille.github.io/CRP-458/Qindex_17.html"> Assignment 17 </a>
+    <br>
+    <a href = "https://qmille.github.io/CRP-458/Qindex18.html"> Assignment 18 </a>
   </body>
 
