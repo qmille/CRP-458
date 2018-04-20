@@ -44,5 +44,7 @@
     <a href = "https://qmille.github.io/CRP-458/Qindex_17.html"> Assignment 17 </a>
     <br>
     <a href = "https://qmille.github.io/CRP-458/Qindex18.html"> Assignment 18 </a>
+    <br>
+    <a href = "https://qmille.github.io/CRP-458/Qindex19.html"> Assignment 19 </a>
   </body>
 
