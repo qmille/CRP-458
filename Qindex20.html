@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="CRP 458 - Assignment 20 QM">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Assignment 20 - QM</title>
+	
+
+<!--External Data-->	
+<script src="https://indicator.extension.iastate.edu/z_cjs/teachingGIS/webGIS/studentFeaturesDB.php?userID=qgmill&theFunction=responseVar"></script>
+	
+
+	
+<!--External CSS-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="http://129.186.142.145/indicators/classes/leaflet-awesome-markers/dist/leaflet.awesome-markers.css">
+	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+	
+	
+	<!--External JS-->	
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+	<script src="https://qmille.github.io/CRP-458/sinkhole_point.geojson"></script>
+
+   <script src="http://129.186.142.145/indicators/classes/leaflet-awesome-markers/dist/leaflet.awesome-markers.js"></script>	
+	
+		<script src="https://indicator.extension.iastate.edu/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
+	
+<style>
+    #map {
+
+     position:relative;
+     width: 990px;
+     height: 400px;
+
+}
+#container {
+	background-color: white;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+   border-style: solid;
+   border-width: 5px;
+}
+#header, #footer {
+	clear: both;
+	padding: 10px;
+	background-color: slategrey;
+	color: white;
+	text-align: center;
+}
+    
+</style>
+	
+</head>
+<body>
+
+    <div id ="container">
+        <div id="header">
+            <h2>Assignment 20 - Quincy Miller</h2>
+            <h3>Custom Map Showing Extensive Agriculture and Some Major Roads</h3>
+            </div>
+        <br>
+	<br>
+<div id="map"></div>
+    </div>
+    <br>
+    <script>
+    
+    console.clear();
+        
+var map = L.map('map', {
+    center: [42.0, -93.634],
+    zoom: 10
+});
+        
+var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+        
+var Stamen_TonerLite = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+	minZoom: 0,
+	maxZoom: 20,
+	ext: 'png'
+});
+        
+var Qmap = L.tileLayer('https://api.mapbox.com/styles/v1/qmille/cjg7aywic08qx2rqptnhw4x3n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicW1pbGxlIiwiYSI6ImNqZzdheHdmZTg0MzAzM3FvamZzbWxmYW4ifQ.UH1ugoIqzr_GLQCvmgmGiA',{
+    attribution: 'Quincy made this with MapBox'
+});
+        
+//layer Control
+
+var baseMaps = {
+  "Open Street Map": osm,
+  "Black and White": Stamen_TonerLite,
+  "Ag and Road Custom Map": Qmap
+};
+
+
+L.control.layers(baseMaps).addTo(map);
+
+    
+    
+    </script>
+</body>
+    
+</html>
