@@ -26,8 +26,6 @@
   <a href="https://qmille.github.io/CRP-458/index_11.html">Assignment 11</a>
   <br>
   <a href="https://qmille.github.io/CRP-458/index_12.html">Assignment 12</a>
-  <br>
-  <a href= "https://qmille.github.io/CRP-458/Assignment_13/ok_quake_assign13.geojson">Data for Assignment 13<a/>
    <br>
    <a href= "https://qmille.github.io/CRP-458/Assignment_13/new_13index.html"> Assignment 13</a>
     <br>
@@ -35,11 +33,7 @@
     <br>
     <a href= "https://qmille.github.io/CRP-458/New_Airports.geojson"> Airport Location Data</a>
     <br>
-    <a href= "https://qmille.github.io/CRP-458/Mini_Project_NEW/mini_proj_index_beta.html"> Mini Project</a> 
-    <br>
-    <a href = "https://qmille.github.io/CRP-458/Mini_Project_NEW/mini_proj_index_beta.html"> Newer Project </a>
-    <br>
-    <a href = "https://qmille.github.io/CRP-458/images/Airport_pin.png"> Images </a>
+    <a href = "https://qmille.github.io/CRP-458/Mini_Project_NEW/mini_proj_index_beta.html"> Mini Project </a>
     <br>
     <a href = "https://qmille.github.io/CRP-458/Qindex_17.html"> Assignment 17 </a>
     <br>
