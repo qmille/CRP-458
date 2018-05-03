@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="CRP 458 Assignment 22">
+	
+  <meta charset="utf-8">
+
+<meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width">
+  <title>LA 458/558 Turf JS Examples</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+	
+	<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+	
+	
+<script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+	
+<script src="https://npmcdn.com/@turf/turf@3.5.1/turf.min.js"></script>	
+	
+<script>
+    var bbox = turf.bbox(features);
+</script>
+	
+    <style>
+    #mapid {
+
+     position:relative;
+     width: 990px;
+     height: 400px;
+
+}
+#container {
+	background-color: white;
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+   border-style: solid;
+   border-width: 5px;
+}
+#header, #footer {
+	clear: both;
+	padding: 10px;
+	background-color: slategrey;
+	color: white;
+	text-align: center;
+}
+ 
+</style>
+	
+	
+</head>
+     <div id ="container">
+        <div id="header">
+            <h2>Assignment 22 - CRP 458 </h2>
+            <h3>Quincy Miller</h3>
+            </div>
+        <br>
+	<br>
+<div id="mapid"></div>
+    
+<body>	 
+		<div id="map"></div>	 
+			<p> (1.) <br><br>
+        (a) Centroid: Takes one or more features and calculates the centroid using the mean of all vertices. This would be useful when summarizing fragmented areas such as small islands or clusters of trees.</p>
+  (b) Envelope: Takes any number of features and returns a rectangular Polygon that encompasses all vertices. Would be useful when doing surveying with a few exterior points.</br><br>
+  (c) Round: Round number to precision. Helps clean data up to make it look nicer.</br><br>
+(d) Difference: Finds the difference between two polygons by clipping the second polygon from the first. Seems like it would be useful when looking at the differences between flooding areas or any change in area.</br><br>
+(e) Returns the minimum distance between a Point and a LineString , being the distance from a line the minimum distance between the point and any segment of the LineString. Useful for looking at access to line features like bus stops and bus lines, or bike lanes and intersections.</br><br><br>
+(2) <br><br>
+(a) Changed the coordinates of "myLine" to change the line distance to 40.498373940017764 miles. </br><br>
+(b) A change in location of my point marker (changed the coordinates to [-93.02,42.02] and this changed the distances between the green marker and the nearest point id) .</br><br>
+(c) A change in the coordinates of point ids also affected the distances from the green marker to the point ids.</br><br>
+(d) A change in the coordinates of the var myPolygon caused its area in both square meters and square miles to change .</br><br>
+(e) An addition of another point id  with coordinates [-93.5, 42.0] caused an addtional line of result (4) showing the distance from green marker to the point id
+
+</div>
+<script>
+console.clear();
+//note that http://icons.webtoolhub.com/icon-p4s2023-set.aspx  used for the green icon source.
+
+//JSON of the line
+var myLine = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          
+          [
+            -93.6,
+            42.1
+          ],
+          [
+            -93.651067,
+            42.006239
+          ],
+          [
+            -93.644630,
+            42.003050
+          ],
+          [
+            -93.639523,
+           42.002667
+          ],
+          [
+            -93.0,
+            42.0
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+
+//JSON of the Polygon
+var myPolygon = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -93.629326,
+              42.000759
+            ],
+            [
+              -93.610306,
+              42.000855
+            ],
+            [
+              -93.610306,
+              41.982738
+            ],
+            [
+              -93.629317,
+              41.982100
+            ],
+           
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+
+
+//Calculate the length of the polyline in miles
+var length = turf.lineDistance(myLine, 'miles');
+console.log("myLine = "+ length + " miles");
+
+
+//calculates the area of the mPolygon in sq meters and sq miles
+var area = turf.area(myPolygon);
+	console.log(area + " sq meters");
+	console.log(area * 0.000000386102158542 + " sq miles");
+	
+
+//The green marker point on the map
+var myPoint = {
+  "type": "Feature",
+  "properties": {
+    "marker-color": "#0f0"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-93.02,42.02]  //change to -93.02,42.02 to cover blue marker and the closest white circle will change
+  }
+};
+
+
+//these are the three white circle markers
+var myPointCollection = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+		  id: 1
+	  },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-93.60,
+              42.01]
+      }
+    }, {
+      "type": "Feature",
+      "properties": {
+		  		  id: 2
+	  },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-93.62,
+              41.99]
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+		  		  id: 3
+	  },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-93.63,
+              42.04]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+		  		  id: 4
+	  },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-93.5,
+              42.0]
+      }, 
+    }
+  ]
+};
+
+
+
+
+//This calculation is geodesic distance of the white circle that is closest to the green marker.
+var nearest = turf.nearest(myPoint, myPointCollection);
+
+var nearestID = nearest.properties.id;
+
+console.log(nearest.properties.id);
+
+//*****************
+var mapCenter = L.latLng(42.05,-93.6);
+
+	
+var map = L.map('mapid').setView(mapCenter, 11);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		maxZoom: 18,
+		attribution: ''
+	}).addTo(map);
+
+var mapCenterMarker = L.marker(mapCenter).addTo(map);
+
+var myStyle = {
+    "color": "green",
+    "weight": 3,
+    "opacity": 0.65
+};
+
+
+var myPointIcon = L.icon({
+		iconUrl: 'https://profseeger.github.io/LA558/images/chartreuseMapMarker.png',
+		iconSize: [32, 32],
+		iconAnchor: [16, 32],
+		//popupAnchor: [0, -28]
+	});
+
+startPoint =  L.geoJSON(myPoint, {
+		pointToLayer: function (feature, latlng) {
+			return L.marker(latlng, {icon: myPointIcon});
+		},
+		//onEachFeature: onEachFeature
+	}).addTo(map);
+
+
+L.geoJSON(myLine, {
+    style: myStyle
+}).addTo(map);
+
+
+L.geoJSON(myPolygon, {
+    style: myStyle
+}).addTo(map);
+
+
+//if the ID of the item identified as being the nearest matches d, then change color of item to orange.
+function getColor(d) {
+    return d == nearestID ? 'orange' :
+                'white';
+}
+
+var geojsonMarkerOptions = {
+    radius: 7,
+    //fillColor: "white",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+L.geoJSON(myPointCollection, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    },
+	style: function(feature) {
+	console.log(feature.properties.id);//note this is how you access contents of the id within L.geoJson
+		return {
+					//radius: some property from geojson,
+					fillColor: getColor(feature.properties.id)
+				};
+			},
+			onEachFeature: function (feature, layer) {
+				layer.bindPopup("ID: "+feature.properties.id);
+			}
+	
+}).addTo(map);
+</script>
+<script src="https://static.jsbin.com/js/render/edit.js?4.1.4"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"https://static.jsbin.com","root":"https://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
